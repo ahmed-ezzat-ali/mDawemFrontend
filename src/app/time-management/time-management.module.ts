@@ -18,6 +18,7 @@ import { ApproveAttendanceComponent } from './pages/configurations/org_structure
 import { RoleCreateComponent } from './pages/configurations/administration/role-create/role-create.component';
 import { DelaysComponent } from './pages/configurations/config/delays/delays.component';
 import { FormsModule } from '@angular/forms';
+import { TimeManagementTestComponent } from './components/time-management-test/time-management-test.component';
 
 
 @NgModule({
@@ -37,7 +38,7 @@ import { FormsModule } from '@angular/forms';
                 RoleReportingComponent, 
                 ApproveAttendanceComponent, 
                 
-                RoleCreateComponent,
+                RoleCreateComponent, TimeManagementTestComponent,
                 ],
   imports: [
     CommonModule,

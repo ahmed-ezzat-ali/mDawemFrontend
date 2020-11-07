@@ -1,0 +1,18 @@
+{
+    "DIR": "rtl",
+    "TEST":"تيست",
+    "HELLO":"مرحبا",
+
+    "AUTH":{
+        "LOGIN":{
+            "LOGIN":"تسجيل الدخول",
+            "EMAIL":"البريد الالكترونى",
+            "PASSWORD":"كلمة المرور"
+        }
+    },
+    "TIME_MANAGEMENT":{
+        "PUNCH_IN_OUT":{
+            "PUNCH_IN_PAGE":"تيست"
+        }
+    }
+}

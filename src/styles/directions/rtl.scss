@@ -1,0 +1,7 @@
+$left :right;
+$right:left;
+
+.rtl {
+    direction: rtl !important;
+    text-align: $left;
+}

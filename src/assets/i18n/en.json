@@ -1,0 +1,17 @@
+{
+    "DIR": "ltr",
+    "TEST":"test",
+    "HELLO":"hello",
+    "AUTH":{
+        "LOGIN":{
+            "LOGIN":"Login",
+            "EMAIL":"E-mail",
+            "PASSWORD":"Password"
+        }
+    },
+    "TIME_MANAGEMENT":{
+        "PUNCH_IN_OUT":{
+            "PUNCH_IN_PAGE":"Punch in page"
+        }
+    }
+}

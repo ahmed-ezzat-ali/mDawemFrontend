@@ -1,0 +1,7 @@
+$left :left;
+$right:right;
+
+.ltr {
+    direction: ltr !important;
+    text-align: $left;
+}

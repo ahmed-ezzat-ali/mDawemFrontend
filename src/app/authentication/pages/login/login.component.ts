@@ -11,10 +11,9 @@ export class LoginComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get('https://jsonplaceholder.typicode.com/posts').subscribe(res => {
-      debugger
+    // this.http.get('https://jsonplaceholder.typicode.com/posts').subscribe(res => {
       
-    })
+    // })
    
   }
 

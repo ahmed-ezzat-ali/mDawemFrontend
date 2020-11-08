@@ -1,3 +1,98 @@
-<div [className]="('DIR'|translate) === 'rtl' ? 'rtl': 'ltr'">
-    <router-outlet></router-outlet>
-</div>
+<mat-toolbar color="accent" class="navbar">
+    <div>
+
+        <button (click)="onSideMenuToggle()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span>mDawem</span>
+
+    </div>
+    <div>
+        <span>Home</span>
+        <span>About</span>
+        <span>Contact us</span>
+    </div>
+
+</mat-toolbar>
+
+
+<mat-sidenav-container class="example-container">
+
+    <mat-sidenav #sidenav mode="side" opened (opened)="log('sidenav opend')"
+        (closed)="log('sidenav closed')" [class.opened-sidenav]="openedSidenav"[class.closed-sidenav]="!openedSidenav"
+        [@slideInOut]="helpMenuOpen">
+
+        
+
+
+        <mat-nav-list class="main-menu">
+            <a mat-list-item (click)="showSecondaryMenu = !showSecondaryMenu">
+                <mat-icon mat-list-icon>access_time</mat-icon>
+                <div mat-line>Time Management</div>
+                <mat-icon *ngIf="!showSecondaryMenu">add</mat-icon>
+                <mat-icon *ngIf="showSecondaryMenu">remove</mat-icon>
+            </a>
+
+            <mat-nav-list *ngIf="showSecondaryMenu" class="secondary-menu" [@inOutAnimation]>
+                <a mat-list-item routerLink="./time_management/punch_in_out">
+                    <mat-icon mat-list-icon>pending_actions</mat-icon>
+                    <div mat-line>Punch in/out</div>
+                </a>
+                <a mat-list-item>
+                    <mat-icon mat-list-icon>date_range</mat-icon>
+                    <div mat-line>Time Sheets</div>
+                </a>
+                
+            </mat-nav-list>
+            <mat-divider></mat-divider>
+
+
+            <a mat-list-item>
+                <mat-icon mat-list-icon>add_task</mat-icon>
+                <div mat-line>Task Management</div>
+            </a>
+            <mat-divider></mat-divider>
+            
+            <a mat-list-item>
+                <mat-icon mat-list-icon>fitness_center</mat-icon>
+                <div mat-line>Wellness Management</div>
+            </a>
+            <mat-divider></mat-divider>
+           
+            <a mat-list-item>
+                <mat-icon mat-list-icon>pie_chart</mat-icon>
+                <div mat-line>Performance</div>
+            </a>
+            <mat-divider></mat-divider>
+
+            
+            <a mat-list-item>
+                <mat-icon mat-list-icon>apartment</mat-icon>
+                <div mat-line>Leave Management</div>
+            </a>
+            <mat-divider></mat-divider>
+
+            <a mat-list-item>
+                <mat-icon mat-list-icon>psychology</mat-icon>
+                <div mat-line>User Behavior</div>
+            </a>
+            <mat-divider></mat-divider>
+
+            <a mat-list-item>
+                <mat-icon mat-list-icon>build_circle</mat-icon>
+                <div mat-line>My Account</div>
+            </a>
+            <mat-divider></mat-divider>
+        </mat-nav-list>
+
+        
+
+    </mat-sidenav>
+
+    <mat-sidenav-content [ngStyle]="{'margin-left.px': contentMargin}">
+        <div [className]="('DIR'|translate) === 'rtl' ? 'rtl': 'ltr'">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+
+</mat-sidenav-container>

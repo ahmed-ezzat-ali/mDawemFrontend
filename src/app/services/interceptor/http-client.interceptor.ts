@@ -13,7 +13,6 @@ export class HttpClientInterceptor implements HttpInterceptor {
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-        debugger
         let authReq = req.clone({
             url: req.url.startsWith('/') ? `${environment.base_url}/${req.url}` : req.url,
             setHeaders: {
@@ -22,7 +21,6 @@ export class HttpClientInterceptor implements HttpInterceptor {
             }
         });
 
-        debugger
 
 
         return new Observable((observer) => {

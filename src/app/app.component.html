@@ -1,7 +1,8 @@
 <mat-toolbar color="accent" class="navbar">
     <div>
 
-        <button (click)="onSideMenuToggle()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <button (click)="onSideMenuToggle()" mat-icon-button class="example-icon"
+            aria-label="Example icon-button with menu icon">
             <mat-icon>menu</mat-icon>
         </button>
         <span>mDawem</span>
@@ -18,27 +19,28 @@
 
 <mat-sidenav-container class="example-container">
 
-    <mat-sidenav #sidenav mode="side" opened (opened)="log('sidenav opend')"
-        (closed)="log('sidenav closed')" [class.opened-sidenav]="openedSidenav"[class.closed-sidenav]="!openedSidenav"
-        [@slideInOut]="helpMenuOpen">
+    <mat-sidenav #sidenav mode="side" opened (opened)="log('sidenav opend')" (closed)="log('sidenav closed')"
+        [class.opened-sidenav]="openedSidenav" [class.closed-sidenav]="!openedSidenav" [@slideInOut]="helpMenuOpen">
 
-        
+
 
 
         <mat-nav-list class="main-menu">
-            
-            <a mat-list-item (click)="sideMenuVariables.showTimeManagementSecondaryMenu = !sideMenuVariables.showTimeManagementSecondaryMenu">
+
+            <a mat-list-item
+                (click)="sideMenuVariables.showTimeManagementSecondaryMenu = !sideMenuVariables.showTimeManagementSecondaryMenu">
                 <mat-icon mat-list-icon>access_time</mat-icon>
                 <div mat-line>Time Management</div>
                 <mat-icon *ngIf="!sideMenuVariables.showTimeManagementSecondaryMenu">add</mat-icon>
                 <mat-icon *ngIf="sideMenuVariables.showTimeManagementSecondaryMenu">remove</mat-icon>
             </a>
-            <mat-nav-list *ngIf="sideMenuVariables.showTimeManagementSecondaryMenu" class="secondary-menu" [@inOutAnimation]>
-                <a mat-list-item routerLink="./time_management/punch_in_out"  routerLinkActive="active-link">
+            <mat-nav-list *ngIf="sideMenuVariables.showTimeManagementSecondaryMenu" class="secondary-menu"
+                [@inOutAnimation]>
+                <a mat-list-item routerLink="./time-management/punch_in_out" routerLinkActive="active-link">
                     <mat-icon mat-list-icon>pending_actions</mat-icon>
                     <div mat-line>Punch in/out</div>
                 </a>
-                <a mat-list-item routerLink="./time_management/team-view" routerLinkActive="active-link">
+                <a mat-list-item routerLink="./time-management/team-view" routerLinkActive="active-link">
                     <mat-icon mat-list-icon>date_range</mat-icon>
                     <div mat-line>Time Sheets</div>
                 </a>
@@ -46,38 +48,66 @@
             <mat-divider></mat-divider>
 
 
-            <a mat-list-item (click)="sideMenuVariables.showTaskManagementSecondaryMenu = !sideMenuVariables.showTaskManagementSecondaryMenu">
+            <a mat-list-item
+                (click)="sideMenuVariables.showTaskManagementSecondaryMenu = !sideMenuVariables.showTaskManagementSecondaryMenu">
                 <mat-icon mat-list-icon>add_task</mat-icon>
                 <div mat-line>Task Management</div>
                 <mat-icon *ngIf="!sideMenuVariables.showTaskManagementSecondaryMenu">add</mat-icon>
                 <mat-icon *ngIf="sideMenuVariables.showTaskManagementSecondaryMenu">remove</mat-icon>
             </a>
-            <mat-nav-list *ngIf="sideMenuVariables.showTaskManagementSecondaryMenu" class="secondary-menu" [@inOutAnimation]>
-                <a mat-list-item routerLink="./task_management/projects"  routerLinkActive="active-link">
+            <mat-nav-list *ngIf="sideMenuVariables.showTaskManagementSecondaryMenu" class="secondary-menu"
+                [@inOutAnimation]>
+                <a mat-list-item routerLink="./task-management/projects" routerLinkActive="active-link">
                     <mat-icon mat-list-icon>dns</mat-icon>
                     <div mat-line>Projects</div>
                 </a>
-                <a mat-list-item routerLink="./task_management/tasks"  routerLinkActive="active-link">
+                <a mat-list-item routerLink="./task-management/tasks" routerLinkActive="active-link">
                     <mat-icon mat-list-icon>add_task</mat-icon>
                     <div mat-line>Tasks</div>
                 </a>
-                
             </mat-nav-list>
             <mat-divider></mat-divider>
+
             
-            <a mat-list-item routerLink="./wellness_management" routerLinkActive="active-link">
+            <a mat-list-item routerLink="./wellness-management" routerLinkActive="active-link">
                 <mat-icon mat-list-icon>fitness_center</mat-icon>
                 <div mat-line>Wellness Management</div>
             </a>
             <mat-divider></mat-divider>
-           
-            <a mat-list-item>
+
+            <a mat-list-item
+                (click)="sideMenuVariables.showPerformacneManagementSecondaryMenu = !sideMenuVariables.showPerformacneManagementSecondaryMenu"
+                routerLink="./performance-management">
                 <mat-icon mat-list-icon>pie_chart</mat-icon>
                 <div mat-line>Performance</div>
+                <mat-icon *ngIf="!sideMenuVariables.showPerformacneManagementSecondaryMenu">add</mat-icon>
+                <mat-icon *ngIf="sideMenuVariables.showPerformacneManagementSecondaryMenu">remove</mat-icon>
             </a>
+            <mat-nav-list *ngIf="sideMenuVariables.showPerformacneManagementSecondaryMenu" class="secondary-menu"
+                [@inOutAnimation]>
+                
+                <a mat-list-item routerLink="./performance-management/project-progress" routerLinkActive="active-link">
+                    <mat-icon mat-list-icon>dns</mat-icon>
+                    <div mat-line>Project Progress</div>
+                </a>
+                <a mat-list-item routerLink="./performance-management/task-progress" routerLinkActive="active-link">
+                    <mat-icon mat-list-icon>add_task</mat-icon>
+                    <div mat-line>Task Progress</div>
+                </a>
+                <a mat-list-item routerLink="./performance-management/productivity-report" routerLinkActive="active-link">
+                    <mat-icon mat-list-icon>escalator</mat-icon>
+                    <div mat-line>Productivity</div>
+                </a>
+                <a mat-list-item routerLink="./performance-management/projections" routerLinkActive="active-link">
+                    <mat-icon mat-list-icon>zoom_in</mat-icon>
+                    <div mat-line>projections</div>
+                </a>
+                
+                
+            </mat-nav-list>
             <mat-divider></mat-divider>
 
-            
+
             <a mat-list-item>
                 <mat-icon mat-list-icon>apartment</mat-icon>
                 <div mat-line>Leave Management</div>
@@ -97,7 +127,7 @@
             <mat-divider></mat-divider>
         </mat-nav-list>
 
-        
+
 
     </mat-sidenav>
 
@@ -106,7 +136,7 @@
             <router-outlet></router-outlet>
         </div>
 
-        
+
     </mat-sidenav-content>
 
 </mat-sidenav-container>

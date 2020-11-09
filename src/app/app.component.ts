@@ -70,6 +70,7 @@ export class AppComponent {
     showTimeManagementSecondaryMenu: false,
     showTaskManagementSecondaryMenu: false,
     showWellnessManagementSecondaryMenu: false,
+    showPerformacneManagementSecondaryMenu: false,
   }
 
   contentMargin = 250;

@@ -7,18 +7,20 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
 
   {
-    path: 'time_management',
+    path: 'time-management',
     loadChildren: () => import('./time-management/time-management.module').then(m => m.TimeManagementModule)
   },
   {
-    path: 'task_management',
+    path: 'task-management',
     loadChildren: () => import('./task-management/task-management.module').then(m => m.TaskManagementModule)
   },
   {
-    path: 'wellness_management',
-    // loadChildren: '../wellness-management/wellness-management.module#WellnessManagementModule'
+    path: 'wellness-management',
     loadChildren: () => import('./wellness-management/wellness-management.module').then(m => m.WellnessManagementModule)
-
+  },
+  {
+    path: 'performance-management',
+    loadChildren: () => import('./performance-management/performance-management.module').then(m => m.PerformanceManagementModule)
   },
 ];
 

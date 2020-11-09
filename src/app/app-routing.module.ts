@@ -22,6 +22,10 @@ const routes: Routes = [
     path: 'performance-management',
     loadChildren: () => import('./performance-management/performance-management.module').then(m => m.PerformanceManagementModule)
   },
+  {
+    path: 'leave-management',
+    loadChildren: () => import('./leave-management/leave-management.module').then(m => m.LeaveManagementModule)
+  },
 ];
 
 @NgModule({

@@ -108,10 +108,29 @@
             <mat-divider></mat-divider>
 
 
-            <a mat-list-item>
+            <a mat-list-item (click)="sideMenuVariables.showLeaveManagementSecondaryMenu = !sideMenuVariables.showLeaveManagementSecondaryMenu"
+            routerLink="./leave-management">
                 <mat-icon mat-list-icon>apartment</mat-icon>
                 <div mat-line>Leave Management</div>
+                <mat-icon *ngIf="!sideMenuVariables.showLeaveManagementSecondaryMenu">add</mat-icon>
+                <mat-icon *ngIf="sideMenuVariables.showLeaveManagementSecondaryMenu">remove</mat-icon>
             </a>
+            <mat-nav-list *ngIf="sideMenuVariables.showLeaveManagementSecondaryMenu" class="secondary-menu"
+                [@inOutAnimation]>
+                
+                <a mat-list-item routerLink="./leave-management/leave-requests" routerLinkActive="active-link">
+                    <mat-icon mat-list-icon>dns</mat-icon>
+                    <div mat-line>Leave Requests</div>
+                </a>
+               
+                <a mat-list-item routerLink="./leave-management/vacation-plans" routerLinkActive="active-link">
+                    <mat-icon mat-list-icon>escalator</mat-icon>
+                    <div mat-line>Vacation Plans</div>
+                </a>
+               
+                
+                
+            </mat-nav-list>
             <mat-divider></mat-divider>
 
             <a mat-list-item>

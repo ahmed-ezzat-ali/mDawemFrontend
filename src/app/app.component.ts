@@ -66,6 +66,11 @@ export class AppComponent {
 
   openedSidenav = true;
   showSecondaryMenu = false;
+  sideMenuVariables = {
+    showTimeManagementSecondaryMenu: false,
+    showTaskManagementSecondaryMenu: false,
+  }
+
   contentMargin = 250;
   helpMenuOpen = 'in';
   constructor(private translateService: TranslateService) {

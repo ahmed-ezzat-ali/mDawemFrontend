@@ -37,7 +37,14 @@ mat-sidenav{
         }
     } 
 
+    
 
+
+}
+
+.active-link, .active-link:hover{
+    background-color: red;
+    color: red;
 }
 
 .opened-sidenav{

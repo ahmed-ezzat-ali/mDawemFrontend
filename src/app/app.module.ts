@@ -11,12 +11,13 @@ import { SideMenuComponent } from './layout/components/side-menu/side-menu.compo
 import { HeaderComponent } from './layout/components/header/header.component';
 import { FooterComponent } from './layout/components/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import {MatSidenavModule} from '@angular/material/sidenav';
 import { FormsModule } from '@angular/forms';
-import {MatIconModule} from '@angular/material/icon';
-import {MatListModule} from '@angular/material/list';
-import {MatButtonModule} from '@angular/material/button';
+import { SharedModule } from './shared/shared.module';
+// import { MatToolbarModule } from '@angular/material/toolbar';
+// import {MatSidenavModule} from '@angular/material/sidenav';
+// import {MatIconModule} from '@angular/material/icon';
+// import {MatListModule} from '@angular/material/list';
+// import {MatButtonModule} from '@angular/material/button';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -44,12 +45,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     }),
     BrowserAnimationsModule,
     FormsModule,
-    
-    MatToolbarModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,
-    MatButtonModule,
+    SharedModule
+   
   ],
   exports: [TranslateModule],
   providers: [

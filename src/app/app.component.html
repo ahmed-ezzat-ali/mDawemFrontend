@@ -26,31 +26,43 @@
 
 
         <mat-nav-list class="main-menu">
-            <a mat-list-item (click)="showSecondaryMenu = !showSecondaryMenu">
+            <a mat-list-item (click)="sideMenuVariables.showTimeManagementSecondaryMenu = !sideMenuVariables.showTimeManagementSecondaryMenu">
                 <mat-icon mat-list-icon>access_time</mat-icon>
                 <div mat-line>Time Management</div>
-                <mat-icon *ngIf="!showSecondaryMenu">add</mat-icon>
-                <mat-icon *ngIf="showSecondaryMenu">remove</mat-icon>
+                <mat-icon *ngIf="!sideMenuVariables.showTimeManagementSecondaryMenu">add</mat-icon>
+                <mat-icon *ngIf="sideMenuVariables.showTimeManagementSecondaryMenu">remove</mat-icon>
             </a>
 
-            <mat-nav-list *ngIf="showSecondaryMenu" class="secondary-menu" [@inOutAnimation]>
-                <a mat-list-item routerLink="./time_management/punch_in_out">
+            <mat-nav-list *ngIf="sideMenuVariables.showTimeManagementSecondaryMenu" class="secondary-menu" [@inOutAnimation]>
+                <a mat-list-item routerLink="./time_management/punch_in_out"  routerLinkActive="active-link">
                     <mat-icon mat-list-icon>pending_actions</mat-icon>
                     <div mat-line>Punch in/out</div>
                 </a>
-                <a mat-list-item>
+                <a mat-list-item routerLink="./time_management/team-view" routerLinkActive="active-link">
                     <mat-icon mat-list-icon>date_range</mat-icon>
                     <div mat-line>Time Sheets</div>
                 </a>
-                
             </mat-nav-list>
             <mat-divider></mat-divider>
 
 
-            <a mat-list-item>
+            <a mat-list-item (click)="sideMenuVariables.showTaskManagementSecondaryMenu = !sideMenuVariables.showTaskManagementSecondaryMenu">
                 <mat-icon mat-list-icon>add_task</mat-icon>
                 <div mat-line>Task Management</div>
+                <mat-icon *ngIf="!sideMenuVariables.showTaskManagementSecondaryMenu">add</mat-icon>
+                <mat-icon *ngIf="sideMenuVariables.showTaskManagementSecondaryMenu">remove</mat-icon>
             </a>
+            <mat-nav-list *ngIf="sideMenuVariables.showTaskManagementSecondaryMenu" class="secondary-menu" [@inOutAnimation]>
+                <a mat-list-item routerLink="./task_management/projects"  routerLinkActive="active-link">
+                    <mat-icon mat-list-icon>dns</mat-icon>
+                    <div mat-line>Projects</div>
+                </a>
+                <a mat-list-item routerLink="./task_management/tasks"  routerLinkActive="active-link">
+                    <mat-icon mat-list-icon>add_task</mat-icon>
+                    <div mat-line>Tasks</div>
+                </a>
+                
+            </mat-nav-list>
             <mat-divider></mat-divider>
             
             <a mat-list-item>
@@ -93,6 +105,8 @@
         <div [className]="('DIR'|translate) === 'rtl' ? 'rtl': 'ltr'">
             <router-outlet></router-outlet>
         </div>
+
+        
     </mat-sidenav-content>
 
 </mat-sidenav-container>

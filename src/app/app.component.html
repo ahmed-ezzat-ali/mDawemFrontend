@@ -127,16 +127,43 @@
                     <mat-icon mat-list-icon>escalator</mat-icon>
                     <div mat-line>Vacation Plans</div>
                 </a>
-               
-                
-                
             </mat-nav-list>
             <mat-divider></mat-divider>
 
-            <a mat-list-item>
+            <a mat-list-item (click)="sideMenuVariables.showUserBehaviorSecondaryMenu = !sideMenuVariables.showUserBehaviorSecondaryMenu">
                 <mat-icon mat-list-icon>psychology</mat-icon>
                 <div mat-line>User Behavior</div>
+                <mat-icon *ngIf="!sideMenuVariables.showUserBehaviorSecondaryMenu">add</mat-icon>
+                <mat-icon *ngIf="sideMenuVariables.showUserBehaviorSecondaryMenu">remove</mat-icon>
             </a>
+            <mat-nav-list *ngIf="sideMenuVariables.showUserBehaviorSecondaryMenu" class="secondary-menu"
+                [@inOutAnimation]>
+                <a mat-list-item routerLink="./user-behavior/behavior-analysis" routerLinkActive="active-link">
+                    <mat-icon mat-list-icon>psychology</mat-icon>
+                    <div mat-line>User Behavior Analysis</div>
+                </a>
+                <a mat-list-item routerLink="./user-behavior/data-analysis" routerLinkActive="active-link">
+                    <mat-icon mat-list-icon>timeline</mat-icon>
+                    <div mat-line>User Data Analysis</div>
+                </a>
+                <a mat-list-item routerLink="./user-behavior/network-analysis" routerLinkActive="active-link">
+                    <mat-icon mat-list-icon>signal_wifi_4_bar</mat-icon>
+                    <div mat-line>User Network Analysis</div>
+                </a>
+                <a mat-list-item routerLink="./user-behavior/traffic-analysis" routerLinkActive="active-link">
+                    <mat-icon mat-list-icon>traffic</mat-icon>
+                    <div mat-line>User Traffic Analysis</div>
+                </a>
+                <a mat-list-item routerLink="./user-behavior/track-screenshots" routerLinkActive="active-link">
+                    <mat-icon mat-list-icon>perm_media</mat-icon>
+                    <div mat-line>Track Screenshots</div>
+                </a>
+                <a mat-list-item routerLink="./user-behavior/connectivity" routerLinkActive="active-link">
+                    <mat-icon mat-list-icon>settings_input_component</mat-icon>
+                    <div mat-line>Connectivity</div>
+                </a>
+               
+            </mat-nav-list>
             <mat-divider></mat-divider>
 
             <a mat-list-item>

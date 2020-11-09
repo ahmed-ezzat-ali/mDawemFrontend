@@ -26,6 +26,10 @@ const routes: Routes = [
     path: 'leave-management',
     loadChildren: () => import('./leave-management/leave-management.module').then(m => m.LeaveManagementModule)
   },
+  {
+    path: 'user-behavior',
+    loadChildren: () => import('./user-behavior/user-behavior.module').then(m => m.UserBehaviorModule)
+  },
 ];
 
 @NgModule({

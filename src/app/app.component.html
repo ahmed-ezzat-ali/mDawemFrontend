@@ -26,13 +26,13 @@
 
 
         <mat-nav-list class="main-menu">
+            
             <a mat-list-item (click)="sideMenuVariables.showTimeManagementSecondaryMenu = !sideMenuVariables.showTimeManagementSecondaryMenu">
                 <mat-icon mat-list-icon>access_time</mat-icon>
                 <div mat-line>Time Management</div>
                 <mat-icon *ngIf="!sideMenuVariables.showTimeManagementSecondaryMenu">add</mat-icon>
                 <mat-icon *ngIf="sideMenuVariables.showTimeManagementSecondaryMenu">remove</mat-icon>
             </a>
-
             <mat-nav-list *ngIf="sideMenuVariables.showTimeManagementSecondaryMenu" class="secondary-menu" [@inOutAnimation]>
                 <a mat-list-item routerLink="./time_management/punch_in_out"  routerLinkActive="active-link">
                     <mat-icon mat-list-icon>pending_actions</mat-icon>
@@ -65,7 +65,7 @@
             </mat-nav-list>
             <mat-divider></mat-divider>
             
-            <a mat-list-item>
+            <a mat-list-item routerLink="./wellness_management" routerLinkActive="active-link">
                 <mat-icon mat-list-icon>fitness_center</mat-icon>
                 <div mat-line>Wellness Management</div>
             </a>

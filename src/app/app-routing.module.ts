@@ -14,6 +14,12 @@ const routes: Routes = [
     path: 'task_management',
     loadChildren: () => import('./task-management/task-management.module').then(m => m.TaskManagementModule)
   },
+  {
+    path: 'wellness_management',
+    // loadChildren: '../wellness-management/wellness-management.module#WellnessManagementModule'
+    loadChildren: () => import('./wellness-management/wellness-management.module').then(m => m.WellnessManagementModule)
+
+  },
 ];
 
 @NgModule({

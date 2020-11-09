@@ -7,7 +7,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
-
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -15,18 +15,22 @@ import { MatButtonModule } from '@angular/material/button';
   imports: [
     CommonModule,
     TranslateModule.forChild(),
-    
+
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
     MatListModule,
     MatButtonModule,
+    MatSnackBarModule
   ],
-  exports: [SharedTestComponent,
+  exports: [
+    SharedTestComponent,
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatButtonModule]
+    MatButtonModule,
+    MatSnackBarModule
+  ]
 })
 export class SharedModule { }

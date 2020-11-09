@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 const AUTH_URLS = ['/posts', '/url2'];
 
 @Injectable()
 export class HttpClientInterceptor implements HttpInterceptor {
-    constructor() {
+    constructor(private snackBar: MatSnackBar) {
     }
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
@@ -65,12 +66,21 @@ export class HttpClientInterceptor implements HttpInterceptor {
                         default:
                             errorMessage = 'Something went wrong.';
                     }
-
-                    alert(errorMessage);
+                    this.showErrorMessageInSnackBar(errorMessage)
                 }
             );
         });
 
 
+    }
+
+    showErrorMessageInSnackBar(message): void {
+        this.snackBar.open(message, null,
+            {
+                duration: 2000,
+                horizontalPosition: 'center',
+                verticalPosition: 'top',
+
+            });
     }
 }

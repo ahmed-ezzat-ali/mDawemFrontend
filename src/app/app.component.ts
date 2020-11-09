@@ -69,6 +69,7 @@ export class AppComponent {
   sideMenuVariables = {
     showTimeManagementSecondaryMenu: false,
     showTaskManagementSecondaryMenu: false,
+    showWellnessManagementSecondaryMenu: false,
   }
 
   contentMargin = 250;

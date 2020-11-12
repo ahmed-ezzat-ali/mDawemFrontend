@@ -1,63 +1,69 @@
-.navbar{
+.navbar {
+    // display:flex;
+    // position: fixed;
     justify-content: space-between;
+    height: 8%;
 }
 
-span{
+span {
     padding-right: 1rem;
 }
 
-mat-sidenav-container{
-    height: 100%;
+mat-sidenav-container {
+    height: 92%;
 }
 
-mat-sidenav-content{
+mat-sidenav-content {
     padding: 16px;
 }
-mat-sidenav{
+mat-sidenav {
     background-color: #525252;
     width: 250px;
 
-    mat-nav-list{
-
+    mat-nav-list {
         a.mat-list-item {
             cursor: pointer;
             font-size: 14px;
-            mat-icon, div{
+            mat-icon,
+            div {
                 color: white !important;
-                
             }
         }
-        mat-divider{
+        mat-divider {
             background-color: #525252;
         }
 
-        .secondary-menu{
+        .secondary-menu {
             background-color: #585757;
-            padding-left: 20px;
+            // padding-left: 20px;
+            padding: 0px;
+            a{
+                padding-left: 20px;
+            }
         }
-    } 
+    }
 
     
-
-
 }
 
-.active-link, .active-link:hover{
-    background-color: red;
-    color: red;
+.active-link,
+.active-link:hover {
+    // background-color: red;
+    border-left: 5px solid #ff4081;
+    div.mat-list-item-content{
+        padding-left: 11px !important;
+    }
+    .text{
+        font-weight: bold;
+    }
+    //padding-left: 11px !important;
+    
 }
 
-.opened-sidenav{
+.opened-sidenav {
     width: 250px;
 }
-.closed-sidenav{
+.closed-sidenav {
     width: 65px;
 }
-// .example-container {
-//     position: absolute;
-//     top: 0;
-//     bottom: 0;
-//     left: 0;
-//     right: 0;
-//     background: #eee;
-//   }
+

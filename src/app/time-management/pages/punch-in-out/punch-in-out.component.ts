@@ -8,27 +8,26 @@ import { TestService } from '../../services/test.service';
   styleUrls: ['./punch-in-out.component.scss']
 })
 export class PunchInOutComponent implements OnInit {
-  lang:string;
+  lang: string;
   constructor(private testService: TestService,
-              private translateService: TranslateService
-    ) { }
+    private translateService: TranslateService
+  ) { }
 
   ngOnInit(): void {
     this.lang = this.translateService.getDefaultLang();
-   this.testService.postPosts(JSON.stringify({
-    title: 'foo',
-    body: 'bar',
-    userId: 1,
-  })).subscribe((response:any)=>{
-   })
+    // this.testService.postPosts(JSON.stringify({
+    //   title: 'foo',
+    //   body: 'bar',
+    //   userId: 1,
+    // })).subscribe((response: any) => {
+    // })
   }
-  
 
-  changeLang(lang)
-  {
+
+  changeLang(lang) {
     this.lang = lang;
     this.translateService.setDefaultLang(lang);
-    sessionStorage.setItem("mdLang",lang);
+    sessionStorage.setItem("mdLang", lang);
     window.location.reload();
   }
 }

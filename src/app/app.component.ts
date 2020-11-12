@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { RouterLinkActive } from '@angular/router';
 
 
 @Component({
@@ -77,6 +78,7 @@ export class AppComponent {
 
   contentMargin = 250;
   helpMenuOpen = 'in';
+  @ViewChild(RouterLinkActive) private routerLinkActive: RouterLinkActive;
   constructor(private translateService: TranslateService) {
     if (sessionStorage.getItem('mdLang')) translateService.setDefaultLang(sessionStorage.getItem('mdLang'))
     else translateService.setDefaultLang('en');
@@ -87,16 +89,126 @@ export class AppComponent {
     console.log(state);
   }
 
-  onSideMenuToggle() {
+  toggleSideMenu() {
     debugger
     this.openedSidenav = !this.openedSidenav;
     if (this.openedSidenav) {
       this.contentMargin = 250;
     } else {
+      this.sideMenuVariables = {
+        showTimeManagementSecondaryMenu: false,
+        showTaskManagementSecondaryMenu: false,
+        showWellnessManagementSecondaryMenu: false,
+        showPerformacneManagementSecondaryMenu: false,
+        showLeaveManagementSecondaryMenu: false,
+        showUserBehaviorSecondaryMenu: false,
+      }
       this.contentMargin = 65;
     }
     this.helpMenuOpen = this.helpMenuOpen === 'out' ? 'in' : 'out';
+  }
 
+  toggleSecondaryMenu(item: string) {
+
+    debugger
+
+    if (!this.openedSidenav) {
+      this.openedSidenav = true;
+      this.contentMargin = 250;
+      this.helpMenuOpen = this.helpMenuOpen === 'out' ? 'in' : 'out';
+    }
+
+    if (item == 'showTimeManagementSecondaryMenu') {
+
+      if (this.sideMenuVariables.showTimeManagementSecondaryMenu) {
+        this.sideMenuVariables.showTimeManagementSecondaryMenu = false;
+      } else {
+        this.sideMenuVariables = {
+          showTimeManagementSecondaryMenu: true,
+          showTaskManagementSecondaryMenu: false,
+          showWellnessManagementSecondaryMenu: false,
+          showPerformacneManagementSecondaryMenu: false,
+          showLeaveManagementSecondaryMenu: false,
+          showUserBehaviorSecondaryMenu: false,
+        }
+      }
+
+    } else if (item == 'showTaskManagementSecondaryMenu') {
+
+      if (this.sideMenuVariables.showTaskManagementSecondaryMenu) {
+        this.sideMenuVariables.showTaskManagementSecondaryMenu = false;
+      } else {
+        this.sideMenuVariables = {
+          showTimeManagementSecondaryMenu: false,
+          showTaskManagementSecondaryMenu: true,
+          showWellnessManagementSecondaryMenu: false,
+          showPerformacneManagementSecondaryMenu: false,
+          showLeaveManagementSecondaryMenu: false,
+          showUserBehaviorSecondaryMenu: false,
+        }
+      }
+
+    } else if (item == 'showPerformacneManagementSecondaryMenu') {
+
+      if (this.sideMenuVariables.showPerformacneManagementSecondaryMenu) {
+        this.sideMenuVariables.showPerformacneManagementSecondaryMenu = false;
+      } else {
+        this.sideMenuVariables = {
+          showTimeManagementSecondaryMenu: false,
+          showTaskManagementSecondaryMenu: false,
+          showWellnessManagementSecondaryMenu: false,
+          showPerformacneManagementSecondaryMenu: true,
+          showLeaveManagementSecondaryMenu: false,
+          showUserBehaviorSecondaryMenu: false,
+        }
+      }
+
+    } else if (item == 'showLeaveManagementSecondaryMenu') {
+
+      if (this.sideMenuVariables.showLeaveManagementSecondaryMenu) {
+        this.sideMenuVariables.showLeaveManagementSecondaryMenu = false;
+      } else {
+        this.sideMenuVariables = {
+          showTimeManagementSecondaryMenu: false,
+          showTaskManagementSecondaryMenu: false,
+          showWellnessManagementSecondaryMenu: false,
+          showPerformacneManagementSecondaryMenu: false,
+          showLeaveManagementSecondaryMenu: true,
+          showUserBehaviorSecondaryMenu: false,
+        }
+      }
+
+    } else if (item == 'showUserBehaviorSecondaryMenu') {
+
+      if (this.sideMenuVariables.showUserBehaviorSecondaryMenu) {
+        this.sideMenuVariables.showUserBehaviorSecondaryMenu = false;
+      } else {
+        this.sideMenuVariables = {
+          showTimeManagementSecondaryMenu: false,
+          showTaskManagementSecondaryMenu: false,
+          showWellnessManagementSecondaryMenu: false,
+          showPerformacneManagementSecondaryMenu: false,
+          showLeaveManagementSecondaryMenu: false,
+          showUserBehaviorSecondaryMenu: true,
+        }
+      }
+
+    }
+
+
+
+  }
+
+  resetSecodaryMenus(){
+    debugger
+    this.sideMenuVariables = {
+      showTimeManagementSecondaryMenu: false,
+      showTaskManagementSecondaryMenu: false,
+      showWellnessManagementSecondaryMenu: false,
+      showPerformacneManagementSecondaryMenu: false,
+      showLeaveManagementSecondaryMenu: false,
+      showUserBehaviorSecondaryMenu: false,
+    }
   }
 }
 

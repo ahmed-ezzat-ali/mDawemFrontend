@@ -3,6 +3,11 @@
     // position: fixed;
     justify-content: space-between;
     height: 8%;
+
+    .brand, .brand:hover{
+        color: white;
+        text-decoration: none;
+    }
 }
 
 span {
@@ -65,5 +70,9 @@ mat-sidenav {
 }
 .closed-sidenav {
     width: 65px;
+}
+
+.example-form-field{
+    // background-color: red;
 }
 

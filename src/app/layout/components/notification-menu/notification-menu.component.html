@@ -1,0 +1,18 @@
+<button mat-button [matMenuTriggerFor]="menu">
+    <mat-icon>notifications_none</mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+    <h3 color="primary">4 Unread notifications</h3>
+    <ul class="notification-list">
+        <mat-divider></mat-divider>
+
+        <li *ngFor="let notif of notifications" class="notif" [ngStyle]="{'background-color': !notif.isRead ? '#f3efef' : 'white'}">
+            <div class="content">
+                <span class="text"> {{notif.text}}</span>
+                <span class="time">{{notif.time}}</span>
+            </div>
+        </li>
+    </ul>
+    <mat-divider></mat-divider>
+    <button mat-menu-item color="primary text-center">Show all notifications</button>
+</mat-menu>

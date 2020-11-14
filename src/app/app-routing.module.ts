@@ -3,8 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './authentication/pages/login/login.component';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
-  { path: 'login', component: LoginComponent },
+  // { path: '', component: LoginComponent },
+  // { path: 'login', component: LoginComponent },
+
+  {
+    path: '',
+    loadChildren: () => import('./landing/landing.module').then(m => m.LandingModule)
+  },
 
   {
     path: 'time-management',

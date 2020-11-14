@@ -13,6 +13,7 @@ import { FooterComponent } from './layout/components/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from './shared/shared.module';
+import { NotificationMenuComponent } from './layout/components/notification-menu/notification-menu.component';
 // import { MatToolbarModule } from '@angular/material/toolbar';
 // import {MatSidenavModule} from '@angular/material/sidenav';
 // import {MatIconModule} from '@angular/material/icon';
@@ -30,6 +31,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     SideMenuComponent,
     HeaderComponent,
     FooterComponent,
+    NotificationMenuComponent,
 
   ],
   imports: [

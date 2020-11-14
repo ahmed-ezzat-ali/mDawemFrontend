@@ -78,6 +78,8 @@ export class AppComponent {
 
   contentMargin = 250;
   helpMenuOpen = 'in';
+  showSearch = false;
+  searchQuery = '';
   @ViewChild(RouterLinkActive) private routerLinkActive: RouterLinkActive;
   constructor(private translateService: TranslateService) {
     if (sessionStorage.getItem('mdLang')) translateService.setDefaultLang(sessionStorage.getItem('mdLang'))
@@ -87,6 +89,24 @@ export class AppComponent {
 
   log(state: string) {
     console.log(state);
+  }
+
+  search() {
+    debugger
+    console.log(this.searchQuery);
+  }
+
+  clearSearch() {
+    if (this.searchQuery == '') {
+      this.showSearch = false;
+
+    } else {
+      this.searchQuery = '';
+    }
+  }
+
+  toggleSearch() {
+    this.showSearch = !this.showSearch;
   }
 
   toggleSideMenu() {
@@ -199,7 +219,7 @@ export class AppComponent {
 
   }
 
-  resetSecodaryMenus(){
+  resetSecodaryMenus() {
     debugger
     this.sideMenuVariables = {
       showTimeManagementSecondaryMenu: false,

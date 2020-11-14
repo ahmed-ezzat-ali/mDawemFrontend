@@ -1,0 +1,35 @@
+
+
+h3{
+    margin: 0px;
+    padding: 5px 15px;
+    font-weight: bold;
+}
+ul.notification-list{
+    padding: 0px;
+    margin:0px;
+
+    li.notif:hover{
+        //background: red;
+        cursor: pointer;
+    }
+    li.notif{
+        list-style: none;
+        padding: 5px 15px;
+
+        p{
+            margin:0px;
+        }
+
+        .content{
+            display: inline-block;
+            .text{
+                display: block;
+            }
+            .time{
+                display: block;
+                font-size: 12px;
+            }
+        }
+    }
+}

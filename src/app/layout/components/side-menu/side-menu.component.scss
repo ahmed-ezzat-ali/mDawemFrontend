@@ -1,0 +1,34 @@
+mat-nav-list.main-menu {
+    a.mat-list-item {
+        cursor: pointer;
+        font-size: 14px;
+        mat-icon,
+        div {
+            color: white !important;
+        }
+    }
+    mat-divider {
+        background-color: #525252;
+    }
+
+    .secondary-menu {
+        background-color: #585757;
+        padding: 0px;
+        a {
+            padding-left: 20px;
+        }
+    }
+
+    .active-link,
+    .active-link:hover {
+        border-left: 5px solid #ff4081;
+        div.mat-list-item-content {
+            padding-left: 11px !important;
+        }
+        .text {
+            font-weight: bold;
+        }
+    }
+}
+
+

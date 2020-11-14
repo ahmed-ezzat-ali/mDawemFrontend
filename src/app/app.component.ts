@@ -1,7 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { SideMenuComponent } from './layout/components/side-menu/side-menu.component';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import { RouterLinkActive } from '@angular/router';
+
 
 
 @Component({
@@ -62,33 +63,42 @@ import { RouterLinkActive } from '@angular/router';
       transition('out => in', animate('200ms ease-in-out'))
     ])
   ]
+
 })
 export class AppComponent {
 
-  openedSidenav = true;
-  showSecondaryMenu = false;
-  sideMenuVariables = {
-    showTimeManagementSecondaryMenu: false,
-    showTaskManagementSecondaryMenu: false,
-    showWellnessManagementSecondaryMenu: false,
-    showPerformacneManagementSecondaryMenu: false,
-    showLeaveManagementSecondaryMenu: false,
-    showUserBehaviorSecondaryMenu: false,
-  }
 
-  contentMargin = 250;
   helpMenuOpen = 'in';
+  openedSidenav = true;
+  contentMargin = 250;
   showSearch = false;
   searchQuery = '';
-  @ViewChild(RouterLinkActive) private routerLinkActive: RouterLinkActive;
+  hero = true;
+
+  @ViewChild(SideMenuComponent) sideMenuComponent;
+
   constructor(private translateService: TranslateService) {
     if (sessionStorage.getItem('mdLang')) translateService.setDefaultLang(sessionStorage.getItem('mdLang'))
     else translateService.setDefaultLang('en');
   }
   title = 'mDawem';
 
-  log(state: string) {
-    console.log(state);
+
+  toggleSideMenu(){
+    debugger
+    this.sideMenuComponent.toggleSideMenu();
+
+  }
+
+  receiveSideMenuMessage(event){
+    debugger
+    this.contentMargin = event.contentMargin;
+    this.helpMenuOpen = event.helpMenuOpen;
+
+  }
+
+  toggleSearch() {
+    this.showSearch = !this.showSearch;
   }
 
   search() {
@@ -105,131 +115,7 @@ export class AppComponent {
     }
   }
 
-  toggleSearch() {
-    this.showSearch = !this.showSearch;
-  }
 
-  toggleSideMenu() {
-    debugger
-    this.openedSidenav = !this.openedSidenav;
-    if (this.openedSidenav) {
-      this.contentMargin = 250;
-    } else {
-      this.sideMenuVariables = {
-        showTimeManagementSecondaryMenu: false,
-        showTaskManagementSecondaryMenu: false,
-        showWellnessManagementSecondaryMenu: false,
-        showPerformacneManagementSecondaryMenu: false,
-        showLeaveManagementSecondaryMenu: false,
-        showUserBehaviorSecondaryMenu: false,
-      }
-      this.contentMargin = 65;
-    }
-    this.helpMenuOpen = this.helpMenuOpen === 'out' ? 'in' : 'out';
-  }
-
-  toggleSecondaryMenu(item: string) {
-
-    debugger
-
-    if (!this.openedSidenav) {
-      this.openedSidenav = true;
-      this.contentMargin = 250;
-      this.helpMenuOpen = this.helpMenuOpen === 'out' ? 'in' : 'out';
-    }
-
-    if (item == 'showTimeManagementSecondaryMenu') {
-
-      if (this.sideMenuVariables.showTimeManagementSecondaryMenu) {
-        this.sideMenuVariables.showTimeManagementSecondaryMenu = false;
-      } else {
-        this.sideMenuVariables = {
-          showTimeManagementSecondaryMenu: true,
-          showTaskManagementSecondaryMenu: false,
-          showWellnessManagementSecondaryMenu: false,
-          showPerformacneManagementSecondaryMenu: false,
-          showLeaveManagementSecondaryMenu: false,
-          showUserBehaviorSecondaryMenu: false,
-        }
-      }
-
-    } else if (item == 'showTaskManagementSecondaryMenu') {
-
-      if (this.sideMenuVariables.showTaskManagementSecondaryMenu) {
-        this.sideMenuVariables.showTaskManagementSecondaryMenu = false;
-      } else {
-        this.sideMenuVariables = {
-          showTimeManagementSecondaryMenu: false,
-          showTaskManagementSecondaryMenu: true,
-          showWellnessManagementSecondaryMenu: false,
-          showPerformacneManagementSecondaryMenu: false,
-          showLeaveManagementSecondaryMenu: false,
-          showUserBehaviorSecondaryMenu: false,
-        }
-      }
-
-    } else if (item == 'showPerformacneManagementSecondaryMenu') {
-
-      if (this.sideMenuVariables.showPerformacneManagementSecondaryMenu) {
-        this.sideMenuVariables.showPerformacneManagementSecondaryMenu = false;
-      } else {
-        this.sideMenuVariables = {
-          showTimeManagementSecondaryMenu: false,
-          showTaskManagementSecondaryMenu: false,
-          showWellnessManagementSecondaryMenu: false,
-          showPerformacneManagementSecondaryMenu: true,
-          showLeaveManagementSecondaryMenu: false,
-          showUserBehaviorSecondaryMenu: false,
-        }
-      }
-
-    } else if (item == 'showLeaveManagementSecondaryMenu') {
-
-      if (this.sideMenuVariables.showLeaveManagementSecondaryMenu) {
-        this.sideMenuVariables.showLeaveManagementSecondaryMenu = false;
-      } else {
-        this.sideMenuVariables = {
-          showTimeManagementSecondaryMenu: false,
-          showTaskManagementSecondaryMenu: false,
-          showWellnessManagementSecondaryMenu: false,
-          showPerformacneManagementSecondaryMenu: false,
-          showLeaveManagementSecondaryMenu: true,
-          showUserBehaviorSecondaryMenu: false,
-        }
-      }
-
-    } else if (item == 'showUserBehaviorSecondaryMenu') {
-
-      if (this.sideMenuVariables.showUserBehaviorSecondaryMenu) {
-        this.sideMenuVariables.showUserBehaviorSecondaryMenu = false;
-      } else {
-        this.sideMenuVariables = {
-          showTimeManagementSecondaryMenu: false,
-          showTaskManagementSecondaryMenu: false,
-          showWellnessManagementSecondaryMenu: false,
-          showPerformacneManagementSecondaryMenu: false,
-          showLeaveManagementSecondaryMenu: false,
-          showUserBehaviorSecondaryMenu: true,
-        }
-      }
-
-    }
-
-
-
-  }
-
-  resetSecodaryMenus() {
-    debugger
-    this.sideMenuVariables = {
-      showTimeManagementSecondaryMenu: false,
-      showTaskManagementSecondaryMenu: false,
-      showWellnessManagementSecondaryMenu: false,
-      showPerformacneManagementSecondaryMenu: false,
-      showLeaveManagementSecondaryMenu: false,
-      showUserBehaviorSecondaryMenu: false,
-    }
-  }
 }
 
 

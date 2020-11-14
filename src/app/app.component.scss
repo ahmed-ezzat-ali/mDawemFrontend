@@ -1,6 +1,4 @@
 .navbar {
-    // display:flex;
-    // position: fixed;
     justify-content: space-between;
     height: 8%;
 
@@ -24,46 +22,9 @@ mat-sidenav-content {
 mat-sidenav {
     background-color: #525252;
     width: 250px;
-
-    mat-nav-list {
-        a.mat-list-item {
-            cursor: pointer;
-            font-size: 14px;
-            mat-icon,
-            div {
-                color: white !important;
-            }
-        }
-        mat-divider {
-            background-color: #525252;
-        }
-
-        .secondary-menu {
-            background-color: #585757;
-            // padding-left: 20px;
-            padding: 0px;
-            a{
-                padding-left: 20px;
-            }
-        }
-    }
-
-    
 }
 
-.active-link,
-.active-link:hover {
-    // background-color: red;
-    border-left: 5px solid #ff4081;
-    div.mat-list-item-content{
-        padding-left: 11px !important;
-    }
-    .text{
-        font-weight: bold;
-    }
-    //padding-left: 11px !important;
-    
-}
+
 
 .opened-sidenav {
     width: 250px;
@@ -72,7 +33,5 @@ mat-sidenav {
     width: 65px;
 }
 
-.example-form-field{
-    // background-color: red;
-}
+
 

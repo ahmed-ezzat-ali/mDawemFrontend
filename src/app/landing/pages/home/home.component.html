@@ -1,9 +1,112 @@
+<section class="section1">
+  <mat-toolbar color="accent" class="navbar">
+
+    <div>
+      <a routerLink="" class="brand">mDawem</a>
+    </div>
+
+    <div>
+      <button mat-stroked-button>Start now</button>
+    </div>
+
+  </mat-toolbar>
+  <h1>
+    Time tracking software to help your team be more productive while working from home
+  </h1>
+
+  <mat-grid-list cols="6" rowHeight="250px">
+
+    <mat-grid-tile [colspan]="1" [rowspan]="1"></mat-grid-tile>
+
+    <mat-grid-tile [colspan]="4" [rowspan]="1">
+      <mat-card class="free-trial-card">
+        <mat-card-header>
+          <mat-card-title>
+            Start your free trial today
+          </mat-card-title>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+        <mat-card-content class="free-trial-card-content">
+
+          <mat-grid-list cols="3">
+
+            <mat-grid-tile [colspan]="1" [rowspan]="1">
+              <div>
+                <mat-icon>person</mat-icon>
+                <p>I am Individual</p>
+                <button mat-raised-button color="primary">Individual</button>
+              </div>
+            </mat-grid-tile>
+
+            <mat-grid-tile [colspan]="1" [rowspan]="1">
+              <div>
+                <mat-icon>group</mat-icon>
+                <p>We are group</p>
+                <button mat-raised-button color="accent">Team</button>
+              </div>
+            </mat-grid-tile>
+
+            <mat-grid-tile [colspan]="1" [rowspan]="1">
+              <div>
+                <mat-icon>school</mat-icon>
+                <p>I am a scholar</p>
+                <button mat-raised-button color="warn">Scholar</button>
+              </div>
+            </mat-grid-tile>
+
+          </mat-grid-list>
+
+
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1"></mat-grid-tile>
+
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <div class="module-item">
+        <mat-icon mat-list-icon>access_time</mat-icon>
+        <p>Time Management</p>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <div class="module-item">
+        <mat-icon mat-list-icon>add_task</mat-icon>
+        <p>Task Management</p>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <div class="module-item">
+        <mat-icon mat-list-icon>fitness_center</mat-icon>
+        <p>Wellness Management</p>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <div class="module-item">
+        <mat-icon mat-list-icon>pie_chart</mat-icon>
+        <p>Performance</p>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <div class="module-item">
+        <mat-icon mat-list-icon>apartment</mat-icon>
+        <p>Leave Management</p>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <div class="module-item">
+        <mat-icon mat-list-icon>psychology</mat-icon>
+        <p>User Behavior</p>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+</section>
 
 <div class="grid-container">
-    <h1 class="mat-h1">Dashboard</h1>
-    <!-- <md-header></md-header> -->
-  
-    <!-- <mat-grid-list cols="4" rowHeight="350px">
+  <h1 class="mat-h1">Dashboard</h1>
+  <!-- <md-header></md-header> -->
+
+  <!-- <mat-grid-list cols="4" rowHeight="350px">
       <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
         <mat-card class="dashboard-card">
           <mat-card-header>
@@ -24,31 +127,28 @@
         </mat-card>
       </mat-grid-tile>
     </mat-grid-list> -->
-  
-  
-    <mat-grid-list cols="4" rowHeight="350px">
-      <mat-grid-tile [colspan]="4" [rowspan]="1">
-        <mat-card class="dashboard-card">
-          <mat-card-header>
-            <mat-card-title>
-              card 1
-              <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-                <mat-icon>more_vert</mat-icon>
-              </button>
-              <mat-menu #menu="matMenu" xPosition="before">
-                <button mat-menu-item>Expand</button>
-                <button mat-menu-item>Remove</button>
-              </mat-menu>
-            </mat-card-title>
-          </mat-card-header>
-          <mat-card-content class="dashboard-card-content">
-            <div>hi this is the card content</div>
-          </mat-card-content>
-        </mat-card>
-      </mat-grid-tile>
-    </mat-grid-list>
-    
-  </div>
 
 
-  
+  <mat-grid-list cols="4" rowHeight="350px">
+    <mat-grid-tile [colspan]="4" [rowspan]="1">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            card 1
+            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" xPosition="before">
+              <button mat-menu-item>Expand</button>
+              <button mat-menu-item>Remove</button>
+            </mat-menu>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <div>hi this is the card content</div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+</div>

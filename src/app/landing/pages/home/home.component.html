@@ -1,115 +1,104 @@
 <section class="section1">
-  <mat-toolbar color="accent" class="navbar">
 
-    <div>
-      <a routerLink="" class="brand">mDawem</a>
-    </div>
+  <div class="container">
 
-    <div>
-      <button mat-raised-button>START NOW</button>
-      <button mat-button routerLink="time-management">LOGIN</button>
-    </div>
+    <mat-toolbar color="accent" class="navbar">
 
-  </mat-toolbar>
-  <h1>
-    Time tracking software to help your team be more productive while working from home
-  </h1>
+      <div>
+        <a routerLink="" class="brand">mDawem</a>
+      </div>
 
-  <mat-grid-list cols="6" rowHeight="250px">
+      <div>
+        <button mat-raised-button>START NOW</button>
+        <button mat-button routerLink="time-management">LOGIN</button>
+      </div>
 
-    <mat-grid-tile [colspan]="1" [rowspan]="1"></mat-grid-tile>
+    </mat-toolbar>
+    <h1>
+      Time tracking software to help your team be more productive while working from home
+    </h1>
 
-    <mat-grid-tile [colspan]="4" [rowspan]="1">
-      <mat-card class="free-trial-card">
-        <mat-card-header>
-          <mat-card-title>
-            Start your free trial today
-          </mat-card-title>
-        </mat-card-header>
-        <mat-divider></mat-divider>
-        <mat-card-content class="free-trial-card-content">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8 ">
+        <mat-card class="free-trial-card">
+          <mat-card-header>
+            <mat-card-title>
+              Start your free trial today
+            </mat-card-title>
+          </mat-card-header>
+          <mat-divider></mat-divider>
+          <mat-card-content class="free-trial-card-content">
 
-          <mat-grid-list cols="3">
-
-            <mat-grid-tile [colspan]="1" [rowspan]="1">
-              <div>
+            <div class="row">
+              <div class="col-md-4">
                 <mat-icon>person</mat-icon>
-                <p>I am Individual</p>
+                <p>I am an individual</p>
                 <button mat-raised-button color="primary">Individual</button>
               </div>
-            </mat-grid-tile>
-
-            <mat-grid-tile [colspan]="1" [rowspan]="1">
-              <div>
+              <div class="col-md-4">
                 <mat-icon>group</mat-icon>
-                <p>We are group</p>
+                <p>We are a group</p>
                 <button mat-raised-button color="accent">Team</button>
               </div>
-            </mat-grid-tile>
-
-            <mat-grid-tile [colspan]="1" [rowspan]="1">
-              <div>
+              <div class="col-md-4">
                 <mat-icon>school</mat-icon>
                 <p>I am a scholar</p>
                 <button mat-raised-button color="warn">Scholar</button>
               </div>
-            </mat-grid-tile>
+              <div class="col-md-12 no-credit-card">No credit card required</div>
+            </div>
 
-          </mat-grid-list>
+          </mat-card-content>
+        </mat-card>
+      </div>
 
+    </div>
 
-        </mat-card-content>
-      </mat-card>
-    </mat-grid-tile>
-    <mat-grid-tile [colspan]="1" [rowspan]="1"></mat-grid-tile>
-
-    <mat-grid-tile [colspan]="1" [rowspan]="1">
-      <div class="module-item">
-        <mat-icon mat-list-icon>access_time</mat-icon>
-        <p>Time Management</p>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="module-item">
+          <mat-icon mat-list-icon>access_time</mat-icon>
+          <p>Time Management</p>
+        </div>
       </div>
-    </mat-grid-tile>
-    <mat-grid-tile [colspan]="1" [rowspan]="1">
-      <div class="module-item">
-        <mat-icon mat-list-icon>add_task</mat-icon>
-        <p>Task Management</p>
+      <div class="col-md-2">
+        <div class="module-item">
+          <mat-icon mat-list-icon>add_task</mat-icon>
+          <p>Task Management</p>
+        </div>
       </div>
-    </mat-grid-tile>
-    <mat-grid-tile [colspan]="1" [rowspan]="1">
-      <div class="module-item">
-        <mat-icon mat-list-icon>fitness_center</mat-icon>
-        <p>Wellness Management</p>
+      <div class="col-md-2">
+        <div class="module-item">
+          <mat-icon mat-list-icon>fitness_center</mat-icon>
+          <p>Wellness Management</p>
+        </div>
       </div>
-    </mat-grid-tile>
-    <mat-grid-tile [colspan]="1" [rowspan]="1">
-      <div class="module-item">
-        <mat-icon mat-list-icon>pie_chart</mat-icon>
-        <p>Performance</p>
+      <div class="col-md-2">
+        <div class="module-item">
+          <mat-icon mat-list-icon>pie_chart</mat-icon>
+          <p>Performance</p>
+        </div>
       </div>
-    </mat-grid-tile>
-    <mat-grid-tile [colspan]="1" [rowspan]="1">
-      <div class="module-item">
-        <mat-icon mat-list-icon>apartment</mat-icon>
-        <p>Leave Management</p>
+      <div class="col-md-2">
+        <div class="module-item">
+          <mat-icon mat-list-icon>apartment</mat-icon>
+          <p>Leave Management</p>
+        </div>
       </div>
-    </mat-grid-tile>
-    <mat-grid-tile [colspan]="1" [rowspan]="1">
-      <div class="module-item">
-        <mat-icon mat-list-icon>psychology</mat-icon>
-        <p>User Behavior</p>
+      <div class="col-md-2">
+        <div class="module-item">
+          <mat-icon mat-list-icon>psychology</mat-icon>
+          <p>User Behavior</p>
+        </div>
       </div>
-    </mat-grid-tile>
-  </mat-grid-list>
+    </div>
+  </div>
 
 </section>
 
-<div class="grid-container">
+<!-- <div>
   <h1 class="mat-h1">Dashboard</h1>
-  <!-- <md-header></md-header> -->
-
-  
-
-
   <mat-grid-list cols="4" rowHeight="350px">
     <mat-grid-tile [colspan]="4" [rowspan]="1">
       <mat-card class="dashboard-card">
@@ -132,12 +121,273 @@
     </mat-grid-tile>
   </mat-grid-list>
 
-
-  <div class="row">
-    <div class="col-md-6">ahmed</div>
-    <div class="col-md-6">ahmed</div>
-    <div class="col-md-6">ahmed</div>
-    <div class="col-md-6">ahmed</div>
-  </div>
+  
 
 </div>
+
+<div class="row">
+  <div class="col-md-6">ahmed</div>
+  <div class="col-md-6">ahmed</div>
+  <div class="col-md-6">ahmed</div>
+  <div class="col-md-6">ahmed</div>
+</div> -->
+
+<section class="features">
+
+  <div class="container">
+    <div class="intro">
+      <h2>FEATURES</h2>
+      <p>Customize features as needed for each your team.</p>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="feature">
+          <mat-icon mat-list-icon>access_time</mat-icon>
+          <h3>Time Management</h3>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature">
+          <mat-icon mat-list-icon>add_task</mat-icon>
+          <h3>Task Management</h3>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature">
+          <mat-icon mat-list-icon>fitness_center</mat-icon>
+          <h3>Wellness Management</h3>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="feature">
+          <mat-icon mat-list-icon>pie_chart</mat-icon>
+          <h3>Performance</h3>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature">
+          <mat-icon mat-list-icon>apartment</mat-icon>
+          <h3>Leave Management</h3>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature">
+          <mat-icon mat-list-icon>psychology</mat-icon>
+          <h3>User Behavior</h3>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4 call-to-action">
+        <button mat-raised-button color="accent">START NOW</button>
+        <p>No credit card required.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="pricing">
+  <div class="container">
+    <div class="intro">
+      <h2>PRICING</h2>
+      <p>Select the pricing tier that suits your needs.</p>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <mat-card class="price basic">
+          <mat-card-header>
+            <mat-card-title>
+              Basic
+            </mat-card-title>
+          </mat-card-header>
+          <!-- <mat-divider></mat-divider> -->
+          <mat-card-content class="content">
+            <p class="users">1 User</p>
+            <div class="cost">
+              <span>$7</span>
+              <span>/month</span>
+            </div>
+
+            <button mat-flat-button color="primary">START FREE TRIAL</button>
+
+            <ul>
+              <li>Time tracking</li>
+              <li>Time management</li>
+              <li>Task management</li>
+              <li><del>Online support</del></li>
+              <li><del>Online support</del></li>
+              <li><del>Online support</del></li>
+              <li><del>Online support</del></li>
+              <li><del>Online support</del></li>
+              <li><del>Online support</del></li>
+              <li><del>Online support</del></li>
+            </ul>
+
+            <button mat-flat-button color="primary">START FREE TRIAL</button>
+
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+
+      <div class="col-md-4">
+        <mat-card class="price standard">
+          <mat-card-header>
+            <mat-card-title>
+              Standard
+            </mat-card-title>
+          </mat-card-header>
+          <!-- <mat-divider></mat-divider> -->
+          <mat-card-content class="content">
+            <p class="users">5 Users</p>
+            <div class="cost">
+              <span>$10</span>
+              <span>/month</span>
+            </div>
+
+            <button mat-flat-button color="accent">START FREE TRIAL</button>
+
+            <ul>
+              <li>Time tracking</li>
+              <li>Time management</li>
+              <li>Task management</li>
+              <li>Online support</li>
+              <li>Online support</li>
+              <li><del>Online support</del></li>
+              <li><del>Online support</del></li>
+              <li><del>Online support</del></li>
+              <li><del>Online support</del></li>
+              <li><del>Online support</del></li>
+            </ul>
+
+            <button mat-flat-button color="accent">START FREE TRIAL</button>
+
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <div class="col-md-4">
+        <mat-card class="price premium">
+          <mat-card-header>
+            <mat-card-title>
+              Premium
+            </mat-card-title>
+          </mat-card-header>
+          <!-- <mat-divider></mat-divider> -->
+          <mat-card-content class="content">
+            <p class="users">20 Users</p>
+            <div class="cost">
+              <span>$12</span>
+              <span>/month</span>
+            </div>
+
+            <button mat-flat-button color="warn">START FREE TRIAL</button>
+
+            <ul>
+              <li>Time tracking</li>
+              <li>Time management</li>
+              <li>Task management</li>
+              <li>Online support</li>
+              <li>Online support</li>
+              <li>Online support</li>
+              <li>Online support</li>
+              <li>Online support</li>
+              <li>Online support</li>
+              <li>Online support</li>
+            </ul>
+
+            <button mat-flat-button color="warn">START FREE TRIAL</button>
+
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h3>All Features</h3>
+        <ul>
+          <li>Time management</li>
+          <li>Task management</li>
+          <li>Welness management</li>
+          <li>Performance management</li>
+          <li>Leave management</li>
+          <li>User behavior</li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h3>Usuful links</h3>
+        <ul>
+          <li>Pricing</li>
+          <li>F.A.Q.</li>
+          <li>Privacy policy</li>
+          <li>User manual</li>
+          <li>Case studies</li>
+          <li>Contact us</li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h3>mDawem</h3>
+        <ul>
+          <li>About us</li>
+          <li>Contact us</li>
+          <li>Help center</li>
+          <li>Product feedback</li>
+          <li>Jobs & careers</li>
+          <li>Contact us</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+
+  <mat-toolbar color="accent" class="navbar">
+    <div class="container">
+      <div class="content">
+
+        <div>
+          <a routerLink="" class="brand">mDawem</a>
+        </div>
+
+        <div>
+          <!-- <button mat-raised-button>START NOW</button>
+          <button mat-button routerLink="time-management">LOGIN</button> -->
+          <button mat-button>
+            <mat-icon>facebook</mat-icon>
+          </button>
+          <button mat-button>
+            <mat-icon>share</mat-icon>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </mat-toolbar>
+
+</footer>

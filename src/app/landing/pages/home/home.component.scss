@@ -1,9 +1,4 @@
-section{
-  padding: 0 150px;
-}
-
-
-.section1{
+.section1 {
   background-color: rgb(87, 104, 49);
   height: 100vh;
   text-align: center;
@@ -17,64 +12,198 @@ section{
       color: white;
       text-decoration: none;
     }
-
   }
 
-  h1{
+  h1 {
     color: white;
-    padding: 20px 50px;
+    padding: 70px 50px;
     font-size: 50px;
     line-height: 50px;
   }
-}
 
+  .free-trial-card {
+    margin-top: 50px;
+    margin-bottom: 50px;
 
+    .free-trial-card-content {
+      padding: 20px;
 
-span {
-  padding-right: 1rem;
-}
+      button {
+        width: 100%;
+      }
 
-.grid-container {
-  margin: 20px;
-}
+      .no-credit-card {
+        padding-top: 20px;
+      }
+    }
+  }
 
-.free-trial-card {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  right: 15px;
-  bottom: 15px;
-  // width: 100%;
-  // height: 100%;
-
-  
-  .free-trial-card-content {
-    
-    // mat-grid-tile{
-    //   padding-bottom: 100px;
-    //   div{
-    //     mat-icon{
-    //       font-size: 30px;
-    //     }
-    //   }
-
-      
-    // }
-
-   
-
-    
+  .module-item {
+    color: white;
+    font-size: 1rem;
+    mat-icon {
+      font-size: x-large;
+    }
   }
 }
 
-.module-item{
+.features {
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  .intro {
+    text-align: center;
+    padding-bottom: 50px;
+
+    h2 {
+      font-size: 3rem;
+      color: #3f51b5;
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  .feature {
+    text-align: center;
+    padding: 50px;
+
+    mat-icon {
+      color: #3f51b5;
+      transform: scale(2);
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-weight: bold;
+      color: #3f51b5;
+      font-size: 24px;
+    }
+
+    p {
+      text-align: left;
+    }
+  }
+
+  .feature:hover {
+    background-color: #f3f3f3;
+    cursor: pointer;
+
+    mat-icon {
+      color: #ff4081;
+    }
+
+    h3 {
+      color: #ff4081;
+    }
+  }
+
+  .call-to-action {
+    text-align: center;
+    padding: 10px;
+    button {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.pricing {
+  background-color: #576831;
+
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  .intro {
+    text-align: center;
+    padding-bottom: 50px;
+
+    h2 {
+      font-size: 3rem;
+      color: #ff4081;
+    }
+    p {
+      font-size: 1rem;
+      color: white;
+    }
+  }
+
+  .price {
+    mat-card-title {
+      font-size: 2rem;
+      text-align: center;
+    }
+    .content {
+      padding: 20px;
+      .users {
+        font-size: 1.5rem;
+      }
+      .cost {
+        margin-bottom: 10px;
+        span:first-child {
+          font-size: 2rem;
+        }
+        span:last-child {
+          font-size: 1rem;
+        }
+      }
+
+      button {
+        width: 100%;
+        padding: 5px;
+      }
+
+      ul {
+        padding: 0;
+        li {
+          list-style: none;
+          font-size: 1rem;
+          font-weight: 400;
+          padding: 10px 0;
+
+          del {
+            color: #b4b3b3;
+          }
+        }
+      }
+    }
+  }
+
+  .price.basic mat-card-title {
+    color: #3f51b5;
+  }
+
+  .price.standard mat-card-title {
+    color: #ff4081;
+  }
+
+  .price.premium mat-card-title {
+    color: red;
+  }
+}
+
+footer {
+  background-color: #252525;
+  padding-top: 50px;
   color: white;
-  font-size: 1rem;
-  mat-icon{
-    font-size: x-large;
+
+  li {
+    list-style: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .navbar {
+    background-color: black;
+    .container .content {
+      display: flex;
+      justify-content: space-between;
+      .brand,
+      .brand:hover {
+        color: white;
+        text-decoration: none;
+      }
+    }
   }
 }
-
-
-
-

@@ -14,6 +14,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from './shared/shared.module';
 import { NotificationMenuComponent } from './layout/components/notification-menu/notification-menu.component';
+import { GuestLayoutComponent } from './layout/guest/guest-layout/guest-layout.component';
+import { AuthorizedLayoutComponent } from './layout/authorized/authorized-layout/authorized-layout.component';
 // import { MatToolbarModule } from '@angular/material/toolbar';
 // import {MatSidenavModule} from '@angular/material/sidenav';
 // import {MatIconModule} from '@angular/material/icon';
@@ -32,6 +34,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     HeaderComponent,
     FooterComponent,
     NotificationMenuComponent,
+    GuestLayoutComponent,
+    AuthorizedLayoutComponent,
 
   ],
   imports: [

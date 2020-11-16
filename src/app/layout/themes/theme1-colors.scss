@@ -1,0 +1,12 @@
+@import '~@angular/material/theming';
+
+
+$app-warn:    mat-palette($mat-red);
+
+$primary: #c5A875;
+$accent: #c86065;
+$accent2: #c19383;
+$accent3: #7d8a73;
+$accent4: #aeacad;
+$background: #525252;
+$warn: mat-color($app-warn);

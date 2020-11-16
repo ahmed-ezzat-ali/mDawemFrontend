@@ -1,3 +1,6 @@
+@import 'src/app/layout/themes/theme1-colors.scss';
+
+
 mat-nav-list.main-menu {
     a.mat-list-item {
         cursor: pointer;
@@ -8,7 +11,7 @@ mat-nav-list.main-menu {
         }
     }
     mat-divider {
-        background-color: #525252;
+        background-color: $background;
     }
 
     .secondary-menu {
@@ -21,7 +24,8 @@ mat-nav-list.main-menu {
 
     .active-link,
     .active-link:hover {
-        border-left: 5px solid #ff4081;
+        // border-left: 5px solid #ff4081;
+        border-left: 5px solid $accent;
         div.mat-list-item-content {
             padding-left: 11px !important;
         }

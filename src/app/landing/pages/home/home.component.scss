@@ -1,15 +1,29 @@
-@import 'src/app/layout/themes/theme1-colors.scss';
+@import "src/app/layout/themes/theme1-colors.scss";
+
+@media (max-width: 576px) {
+  .section1 h1 {
+    padding-top: 20px !important;
+    padding-bottom: 0px !important;
+    font-size: 24px !important;
+    line-height: 2rem !important;
+  }
+}
 
 .section1 {
-  background-color: rgb(87, 104, 49);
-  height: 100vh;
+
+  // background-color: rgb(87, 104, 49);
+  // background-image: url("~/images/bg1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+  min-height: 100vh;
   text-align: center;
 
   .navbar {
     justify-content: space-between;
     background: none;
 
-    .login-btn{
+    .login-btn {
       color: white;
     }
 
@@ -136,6 +150,7 @@
   }
 
   .price {
+    margin-bottom: 20px;
     mat-card-title {
       font-size: 2rem;
       text-align: center;
@@ -214,10 +229,10 @@ footer {
   }
 }
 
-.test{
+.test {
   display: flex;
 }
-.test-color{
+.test-color {
   width: 100px;
   height: 100px;
 }

@@ -75,13 +75,11 @@ export class AuthorizedLayoutComponent implements OnInit {
   }
 
   toggleSideMenu() {
-    debugger
     this.sideMenuComponent.toggleSideMenu();
 
   }
 
   receiveSideMenuMessage(event) {
-    debugger
     this.contentMargin = event.contentMargin;
     this.helpMenuOpen = event.helpMenuOpen;
 
@@ -92,7 +90,6 @@ export class AuthorizedLayoutComponent implements OnInit {
   }
 
   search() {
-    debugger
     console.log(this.searchQuery);
   }
 

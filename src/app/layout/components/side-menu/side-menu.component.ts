@@ -78,7 +78,6 @@ export class SideMenuComponent implements OnInit {
 
   @Output() sideMenuMessageEvent = new EventEmitter<any>();
   constructor() {
-    debugger
   }
 
   ngOnInit(): void {
@@ -88,7 +87,6 @@ export class SideMenuComponent implements OnInit {
 
 
   toggleSideMenu() {
-    debugger
     this.openedSidenav = !this.openedSidenav;
     if (this.openedSidenav) {
       this.contentMargin = 250;
@@ -110,7 +108,6 @@ export class SideMenuComponent implements OnInit {
 
   toggleSecondaryMenu(item: string) {
 
-    debugger
 
     if (!this.openedSidenav) {
       this.openedSidenav = true;
@@ -201,7 +198,6 @@ export class SideMenuComponent implements OnInit {
   }
 
   resetSecodaryMenus() {
-    debugger
     this.sideMenuVariables = {
       showTimeManagementSecondaryMenu: false,
       showTaskManagementSecondaryMenu: false,

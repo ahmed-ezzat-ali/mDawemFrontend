@@ -4,13 +4,19 @@ import { AuthorizedLayoutComponent } from './layout/authorized/authorized-layout
 import { GuestLayoutComponent } from './layout/guest/guest-layout/guest-layout.component';
 
 const routes: Routes = [
-  
+
   {
     path: '',
     component: GuestLayoutComponent,
     children: [
-      { path: '', loadChildren: () => import('./landing/landing.module').then(m => m.LandingModule)},
+      { path: '', loadChildren: () => import('./landing/landing.module').then(m => m.LandingModule) },
     ]
+  },
+
+  {
+    path: 'account',
+    // loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
+    loadChildren: () => import('./authentication/authentication.module').then(m => m.AuthenticationModule)
   },
 
   {
@@ -18,6 +24,8 @@ const routes: Routes = [
     component: AuthorizedLayoutComponent,
     children: [
       // { path: 'dashboard', loadChildren: () => import('./time-management/time-management.module').then(m => m.TimeManagementModule)},
+
+      
 
       {
         path: 'time-management',
@@ -51,7 +59,7 @@ const routes: Routes = [
   //   loadChildren: () => import('./landing/landing.module').then(m => m.LandingModule)
   // },
 
-  
+
 ];
 
 @NgModule({

@@ -6,6 +6,8 @@ import { RegistrationComponent } from './pages/registration/registration.compone
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 import { AuthTestComponent } from './components/auth-test/auth-test.component';
+import { SharedModule } from '../shared/shared.module';
+import { AuthenticationRoutingModule } from './authentication.routing.module';
 
 
 
@@ -13,6 +15,8 @@ import { AuthTestComponent } from './components/auth-test/auth-test.component';
   declarations: [LoginComponent, RegistrationComponent, ForgotPasswordComponent, ResetPasswordComponent, AuthTestComponent],
   imports: [
     CommonModule,
+    SharedModule,
+    AuthenticationRoutingModule,
     TranslateModule.forChild(),
   ]
 })

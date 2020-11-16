@@ -1,0 +1,85 @@
+@import "src/app/layout/themes/theme1-colors.scss";
+
+@media (max-width: 576px) {
+  .section1 h1 {
+    padding-top: 20px !important;
+    padding-bottom: 0px !important;
+    font-size: 24px !important;
+    line-height: 2rem !important;
+  }
+}
+
+.section1 {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  text-align: center;
+
+  .navbar {
+    justify-content: space-between;
+    background: none;
+
+    .login-btn {
+      color: white;
+    }
+
+    .brand,
+    .brand:hover {
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+  .free-trial-card {
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    .free-trial-card-content {
+      padding: 20px;
+
+      button {
+        width: 40%;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin-top: 30px;
+      }
+
+      .no-credit-card {
+        padding-top: 10px;
+      }
+    }
+
+    .user-type {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      position: relative;
+
+      mat-icon {
+        position: absolute;
+        top: 14px;
+        left: 70%;
+        color: #c5a87526;
+        transform: scale(4);
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+      }
+
+      mat-radio-button {
+        font-weight: 500;
+        // border-left: 5px solid $primary;
+      }
+
+      
+    }
+
+    mat-form-field{
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,53 @@
+@import "src/app/layout/themes/theme1-colors.scss";
+
+@media (max-width: 576px) {
+  
+}
+
+.section1 {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+  min-height: 100vh;
+  text-align: center;
+
+  .navbar {
+    justify-content: space-between;
+    background: none;
+
+    .login-btn {
+      color: white;
+    }
+
+    .brand,
+    .brand:hover {
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+  
+
+  .free-trial-card {
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    .free-trial-card-content {
+      padding-top: 20px;
+
+      button {
+        width: 100%;
+        margin-top: 20px;
+        padding: 5px;
+      }
+
+      mat-form-field{
+        width: 100%;
+      }
+
+      
+    }
+  }
+
+  
+}

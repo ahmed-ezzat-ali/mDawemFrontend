@@ -26,11 +26,11 @@
                         </mat-card-title>
                     </mat-card-header>
                     <mat-divider></mat-divider>
-                    <mat-card-content class="free-trial-card-content">
+                    <mat-card-content class="free-trial-card-content" *ngIf="!emailSent" [@slideInOut]="helpMenuOpen" >
 
-                        
 
-                        <div class="register-stage1" *ngIf="stage == 1">
+
+                        <div class="register-stage1" *ngIf="stage == 1 && !commonService.isLoading">
                             <mat-radio-group aria-label="Select an option" [(ngModel)]="registrationModel.type">
                                 <div class="row">
                                     <div class="col-md-4 user-type individual">
@@ -48,13 +48,14 @@
                                 </div>
                             </mat-radio-group>
 
-                            <button mat-raised-button (click)="next()" color="warn" [disabled]="registrationModel.type == 0">Try for free <mat-icon>
+                            <button mat-raised-button (click)="next()" color="accent"
+                                [disabled]="registrationModel.type == 0">Try for free <mat-icon>
                                     navigate_next</mat-icon></button>
 
 
                         </div>
 
-                        <div class="register-stage2" *ngIf="stage == 2" >
+                        <div class="register-stage2" *ngIf="stage == 2 && !commonService.isLoading">
                             <form class="example-form">
                                 <div class="row">
                                     <div class="col-md-4">
@@ -81,19 +82,21 @@
                                     <div class="col-md-6">
                                         <mat-form-field appearance="outline">
                                             <mat-label>Email</mat-label>
-                                            <input matInput type="email" [(ngModel)]="registrationModel.emailAddress" name="emailAddress">
+                                            <input matInput type="email" [(ngModel)]="registrationModel.emailAddress"
+                                                name="emailAddress">
                                         </mat-form-field>
                                     </div>
 
                                     <div class="col-md-6">
                                         <mat-form-field appearance="outline">
                                             <mat-label>Password</mat-label>
-                                            <input matInput type="password" [(ngModel)]="registrationModel.password" name="password">
+                                            <input matInput type="password" [(ngModel)]="registrationModel.password"
+                                                name="password">
                                         </mat-form-field>
                                     </div>
                                 </div>
 
-                                <button mat-raised-button color="warn" (click)="next()"
+                                <button mat-raised-button color="accent" (click)="next()"
                                     [disabled]="!registrationModel.type || !registrationModel.name || !registrationModel.surname || registrationModel.emailAddress == null || registrationModel.password == null">Continue
                                     <mat-icon>navigate_next</mat-icon>
                                 </button>
@@ -102,13 +105,14 @@
 
                         </div>
 
-                        <div class="register-stage3" *ngIf="stage == 3" >
+                        <div class="register-stage3" *ngIf="stage == 3 && !commonService.isLoading">
                             <form class="example-form">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <mat-form-field appearance="outline">
                                             <mat-label>Company Name</mat-label>
-                                            <input matInput [(ngModel)]="registrationModel.companyName" name="companyName">
+                                            <input matInput [(ngModel)]="registrationModel.companyName"
+                                                name="companyName">
                                         </mat-form-field>
                                     </div>
 
@@ -116,19 +120,19 @@
                                         <mat-form-field appearance="outline">
                                             <mat-label>Company size</mat-label>
                                             <mat-select [(value)]="registrationModel.companySize">
-                                              <mat-option value="hust me">Just me</mat-option>
-                                              <mat-option value="2-20">2-20</mat-option>
-                                              <mat-option value="21-100">21-100</mat-option>
-                                              <mat-option value="101-1000">101-1000</mat-option>
-                                              <mat-option value="1000+">1000+</mat-option>
+                                                <mat-option value="hust me">Just me</mat-option>
+                                                <mat-option value="2-20">2-20</mat-option>
+                                                <mat-option value="21-100">21-100</mat-option>
+                                                <mat-option value="101-1000">101-1000</mat-option>
+                                                <mat-option value="1000+">1000+</mat-option>
                                             </mat-select>
-                                          </mat-form-field>
+                                        </mat-form-field>
                                     </div>
 
-                                    
+
                                 </div>
 
-                                <button mat-raised-button color="warn" (click)="register()"
+                                <button mat-raised-button color="accent" (click)="register()"
                                     [disabled]="!registrationModel.companyName || !registrationModel.companySize">Register
                                     <mat-icon>navigate_next</mat-icon>
                                 </button>
@@ -138,12 +142,32 @@
 
                         </div>
 
-                        <div class="col-md-12 no-credit-card">
+                        <div *ngIf="commonService.isLoading">
+                            <div class="col-md-4 offset-md-5">
+                                <mat-spinner></mat-spinner>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 no-credit-card" *ngIf="!commonService.isLoading">
                             No credit card required.
                         </div>
-                        <a mat-button class="previous-btn" (click)="previous()" *ngIf="stage > 1"> <mat-icon>navigate_before</mat-icon> Previous</a>
+                        <a mat-button class="previous-btn" (click)="previous()"
+                            *ngIf="stage > 1 && !commonService.isLoading">
+                            <mat-icon>navigate_before</mat-icon> Previous
+                        </a>
 
                     </mat-card-content>
+
+                    <mat-card-content class="free-trial-card-content" *ngIf="emailSent">
+                        
+
+                        <div class="registration-completed">
+                            <mat-icon>check_circle_outline</mat-icon>
+                            <h2>Registration completed</h2>
+                            <p>Please check your email</p>
+                        </div>
+                    </mat-card-content>
+
                 </mat-card>
             </div>
 
@@ -151,4 +175,5 @@
 
 
     </div>
+
 </section>

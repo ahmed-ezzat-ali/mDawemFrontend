@@ -20,7 +20,6 @@ export class ForgotPasswordComponent implements OnInit {
   sendEmailNotification() {
     this.commonService.showLoading();
     this.authService.forgotPassword(this.email).subscribe(res => {
-      debugger
       if (res.success) {
         this.snackBar.open('Please check your inbox, we have sent you and email with the new password.', null,
           {

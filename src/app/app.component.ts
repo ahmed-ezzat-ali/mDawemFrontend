@@ -28,7 +28,6 @@ export class AppComponent {
 
     let accessToken = cookieService.get('accessToken');
     let userId = cookieService.get('userId');
-    debugger
 
     if (userId) {
       this.router.navigateByUrl('/time-management');

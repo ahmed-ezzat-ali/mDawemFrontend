@@ -12,7 +12,6 @@ export class BaseHttpService {
   }
 
   post(url, body, queryParams = {}) {
-    debugger
     return this.httpClient.post(`${environment.base_url}/${url}`, body, queryParams);
   }
 

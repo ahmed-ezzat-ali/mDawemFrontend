@@ -28,7 +28,6 @@ export class LoginComponent implements OnInit {
   }
 
   login(form: NgForm) {
-    debugger
 
     this.commonService.isLoading = true;
 

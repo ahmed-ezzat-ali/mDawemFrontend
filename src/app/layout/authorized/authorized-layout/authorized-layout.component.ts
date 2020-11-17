@@ -106,7 +106,6 @@ export class AuthorizedLayoutComponent implements OnInit {
   }
 
   logout(){
-    debugger
     this.cookieService.deleteAll();
     this.router.navigateByUrl('/')
   }

@@ -3,17 +3,17 @@ import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HttpErrorResponse
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { CommonService } from '../common/common.service';
 
 
 const AUTH_URLS = ['/posts', '/url2'];
 
 @Injectable()
 export class HttpClientInterceptor implements HttpInterceptor {
-    constructor(private snackBar: MatSnackBar) {
+    constructor(private snackBar: MatSnackBar, public commonService: CommonService) {
     }
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-
         let authReq = req.clone({
             url: req.url.startsWith('/') ? `${environment.base_url}/${req.url}` : req.url,
             setHeaders: {
@@ -25,7 +25,6 @@ export class HttpClientInterceptor implements HttpInterceptor {
 
 
         return new Observable((observer) => {
-
             next.handle(authReq).subscribe(
                 (res: HttpResponse<any>) => {
                     if (res instanceof HttpResponse) {
@@ -56,7 +55,7 @@ export class HttpClientInterceptor implements HttpInterceptor {
                             break;
 
                         case 500:
-                            errorMessage = `${err.status}: Internal Server Error.`;
+                            errorMessage = `${err.status}: Internal Server Error: ${err.error.error.message}`;
                             break;
 
                         case 503:
@@ -66,7 +65,9 @@ export class HttpClientInterceptor implements HttpInterceptor {
                         default:
                             errorMessage = 'Something went wrong.';
                     }
-                    this.showErrorMessageInSnackBar(errorMessage)
+                    this.showErrorMessageInSnackBar(errorMessage);
+
+                    this.commonService.hideLoading();
                 }
             );
         });
@@ -77,7 +78,7 @@ export class HttpClientInterceptor implements HttpInterceptor {
     showErrorMessageInSnackBar(message): void {
         this.snackBar.open(message, null,
             {
-                duration: 2000,
+                duration: 5000,
                 horizontalPosition: 'center',
                 verticalPosition: 'top',
 

@@ -28,6 +28,8 @@
                     <mat-divider></mat-divider>
                     <mat-card-content class="free-trial-card-content">
 
+                        
+
                         <div class="register-stage1" *ngIf="stage == 1">
                             <mat-radio-group aria-label="Select an option" [(ngModel)]="registrationModel.type">
                                 <div class="row">
@@ -49,7 +51,6 @@
                             <button mat-raised-button (click)="next()" color="warn" [disabled]="registrationModel.type == 0">Try for free <mat-icon>
                                     navigate_next</mat-icon></button>
 
-                            <div class="col-md-12 no-credit-card">No credit card required</div>
 
                         </div>
 
@@ -58,19 +59,33 @@
                                 <div class="row">
                                     <div class="col-md-4">
                                         <mat-form-field appearance="outline">
-                                            <mat-label>Your name</mat-label>
+                                            <mat-label>First name</mat-label>
                                             <input matInput [(ngModel)]="registrationModel.name" name="name">
                                         </mat-form-field>
                                     </div>
 
                                     <div class="col-md-4">
                                         <mat-form-field appearance="outline">
-                                            <mat-label>Email</mat-label>
-                                            <input matInput type="email" [(ngModel)]="registrationModel.email" name="email">
+                                            <mat-label>Surname</mat-label>
+                                            <input matInput [(ngModel)]="registrationModel.surname" name="surname">
                                         </mat-form-field>
                                     </div>
 
                                     <div class="col-md-4">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Username</mat-label>
+                                            <input matInput [(ngModel)]="registrationModel.userName" name="userName">
+                                        </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Email</mat-label>
+                                            <input matInput type="email" [(ngModel)]="registrationModel.emailAddress" name="emailAddress">
+                                        </mat-form-field>
+                                    </div>
+
+                                    <div class="col-md-6">
                                         <mat-form-field appearance="outline">
                                             <mat-label>Password</mat-label>
                                             <input matInput type="password" [(ngModel)]="registrationModel.password" name="password">
@@ -79,16 +94,11 @@
                                 </div>
 
                                 <button mat-raised-button color="warn" (click)="next()"
-                                    [disabled]="!registrationModel.type || registrationModel.name == null || registrationModel.email == null || registrationModel.password == null">Continue
+                                    [disabled]="!registrationModel.type || !registrationModel.name || !registrationModel.surname || registrationModel.emailAddress == null || registrationModel.password == null">Continue
                                     <mat-icon>navigate_next</mat-icon>
                                 </button>
 
                             </form>
-
-
-
-
-                            <div class="col-md-12 no-credit-card">No credit card required</div>
 
                         </div>
 
@@ -118,16 +128,20 @@
                                     
                                 </div>
 
-                                <button mat-raised-button color="warn" routerLink="./../../time-management"
+                                <button mat-raised-button color="warn" (click)="register()"
                                     [disabled]="!registrationModel.companyName || !registrationModel.companySize">Register
                                     <mat-icon>navigate_next</mat-icon>
                                 </button>
 
                             </form>
 
-                            <div class="col-md-12 no-credit-card">No credit card required</div>
 
                         </div>
+
+                        <div class="col-md-12 no-credit-card">
+                            No credit card required.
+                        </div>
+                        <a mat-button class="previous-btn" (click)="previous()" *ngIf="stage > 1"> <mat-icon>navigate_before</mat-icon> Previous</a>
 
                     </mat-card-content>
                 </mat-card>

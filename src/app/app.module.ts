@@ -21,6 +21,7 @@ import { AuthorizedLayoutComponent } from './layout/authorized/authorized-layout
 // import {MatIconModule} from '@angular/material/icon';
 // import {MatListModule} from '@angular/material/list';
 // import {MatButtonModule} from '@angular/material/button';
+import { CookieService } from 'ngx-cookie-service';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -57,6 +58,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   exports: [TranslateModule],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true },
+    CookieService
   ],
   bootstrap: [AppComponent]
 })

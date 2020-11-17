@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  base_url: 'http://test.mdawem.com'
+  base_url: 'http://test.api.mdawem.com/api'
 };
 
 /*

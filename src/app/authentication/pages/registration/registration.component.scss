@@ -74,12 +74,16 @@
         font-weight: 500;
         // border-left: 5px solid $primary;
       }
-
-      
     }
 
-    mat-form-field{
+    mat-form-field {
       width: 100%;
+    }
+
+    .previous-btn {
+      position: absolute;
+      bottom: 5px;
+      right: 5px;
     }
   }
 }

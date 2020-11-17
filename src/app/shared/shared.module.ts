@@ -17,6 +17,8 @@ import { MatRadioModule } from '@angular/material/radio';
 import { FormsModule } from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -39,7 +41,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatCardModule,
     MatRadioModule,
     MatSelectModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     SharedTestComponent,
@@ -57,7 +61,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatCardModule,
     MatRadioModule,
     MatSelectModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule
   ]
 })
 export class SharedModule { }

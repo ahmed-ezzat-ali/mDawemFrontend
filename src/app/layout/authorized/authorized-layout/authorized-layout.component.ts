@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { SideMenuComponent } from '../../components/side-menu/side-menu.component';
+import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'md-authorized-layout',
@@ -69,7 +71,8 @@ export class AuthorizedLayoutComponent implements OnInit {
   openedSidenav = true;
   contentMargin = 250;
   @ViewChild(SideMenuComponent) sideMenuComponent;
-  constructor() { }
+
+  constructor(private cookieService: CookieService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -100,6 +103,12 @@ export class AuthorizedLayoutComponent implements OnInit {
     } else {
       this.searchQuery = '';
     }
+  }
+
+  logout(){
+    debugger
+    this.cookieService.deleteAll();
+    this.router.navigateByUrl('/')
   }
 
 }
